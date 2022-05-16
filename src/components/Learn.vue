@@ -1,9 +1,9 @@
 <template>
     <h3>MouseEvents</h3>
 
-    <div class="box" @mouseover="mouseEvenet($event,0)">{{ eventsNames[0] }} </div>
+    <!-- <div class="box" @mouseover="mouseEvenet($event,0)">{{ eventsNames[0] }} </div>
     <div class="box" @mouseleave="mouseEvenet($event,1)">{{ eventsNames[1] }}</div>
-    <div class="box" @dblclick="mouseEvenet($event,2)">{{ eventsNames[2] }}</div>
+    <div class="box" @dblclick="mouseEvenet($event,2)">{{ eventsNames[2] }}</div> -->
     <div class="box" @mousemove="mouseMoveEvent">Div Mouse Position {{ x }} - {{ y }}</div>
 
     <h3>V-FOR</h3>
@@ -22,17 +22,44 @@
          </li>
     </ul>
 
+    <h3>Modal number 1 <button @click="toggleModal">Show Modal number 1</button></h3>
+    <Modal
+    v-if="showModal"
+    theme="white" 
+    @close="toggleModal">   
+            <template v-slot:title>
+                <p> {{ ModalNameOne }} 1111 </p>
+            </template>
+    </Modal>
+
+    <h3>Modal number 2  <button @click="toggleModal2">Show Modal number 2</button></h3>
+    <Modal
+    v-if="showModal2"
+    theme="white" 
+    @close="toggleModal2">   
+            <template v-slot:title>
+                <p> {{ ModalNameTwo }} 2222</p>
+            </template>
+    </Modal>
 </template>
 
 <script>
 // my-component.js
+import Modal from './Modal.vue'
+
 export default {
+    components: {
+        Modal
+    },
   data() {
     return {
+        ModalNameOne: 'Welcome to Vue Modal number one',
+        ModalNameTwo: 'Welcome to Vue Modal number two',
          eventsNames: ['Mouseover','Mouseleave','DoubelClick'],
          x: 0,
          y: 0,
-         isTrue: '',
+         showModal: false,
+         showModal2: false,
          animes: [
              { anime_name: 'naruto' , rate: '10-10', isFav: true},
              { anime_name: 'bleach' , rate: '8-10', isFav: false},
@@ -53,7 +80,13 @@ export default {
     },
     changeFav(key){
         this.animes[key].isFav = !this.animes[key].isFav
-    }
+    },
+    toggleModal() {
+        this.showModal = !this.showModal
+    },
+     toggleModal2() {
+        this.showModal2 = !this.showModal2
+    },
   },
   computed: {
       filterdBooks() {
