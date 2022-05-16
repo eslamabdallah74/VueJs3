@@ -1,8 +1,8 @@
 <script setup>
-import Learn from './components/Learn.vue';
+import Project from './components/Project.vue';
 </script>
 
 <template>
-  <Learn></Learn>
+  <Project></Project>
 </template>
 
