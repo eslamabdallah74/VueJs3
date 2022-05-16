@@ -26,7 +26,7 @@ import Block from './components/Block.vue';
         isPlaying:    false,
         delay:        null,
         score:        null,
-        showResults:  false
+        showResults:  false,
       }
     },
     methods: {
