@@ -11,6 +11,7 @@ import Block from './components/Block.vue';
       <div class="playButton"><button :disabled="isPlaying" @click="start">Play</button></div>
       <Results  v-if="showResults" :score="score"></Results>
       <Block  v-if="isPlaying" :delay="delay" @end="endGame"></Block>
+
   </div>
 </template>
 
@@ -54,10 +55,10 @@ import Block from './components/Block.vue';
   }
   .playButton button{
     padding: 20px 30px;
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 10px;
-    background: brown;
-    color:white;
+    background: white;
+    color:black;
     cursor: pointer;
   }
   .playButton button:disabled,

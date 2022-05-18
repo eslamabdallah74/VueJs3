@@ -71,7 +71,7 @@
 <style>
     .margin{ margin: 20px 0;}
     .score {
-        color: brown;
+        color: white;
         font-weight: bold;
         font-size: 20px;
     }

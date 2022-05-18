@@ -1,6 +1,6 @@
 <template>
     <div class="block" @click="stopTimer" v-if="showModal">
-        Click Me! 
+        CLICK ME!
     </div>
 </template>
 
@@ -45,9 +45,9 @@
 <style>
     .block{
         width: 200px;
-        background: brown;
+        background: white;
         border-radius: 20px;
-        color: white;
+        color: black;
         text-align: center;
         padding: 50px 0;
         margin-top: v-bind(marginTop);
