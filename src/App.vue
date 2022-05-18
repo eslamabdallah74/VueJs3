@@ -6,9 +6,12 @@ import Input from './components/Input.vue';
 
 <template>
   <div class="container">
-      <h1>Inputs</h1>
+      <h1>Router View</h1>
   </div>
-  <Input></Input>
+  <router-link to="/">Home</router-link>
+  <br>
+  <router-link :to="{name: 'Games'}">Games</router-link>
+  <router-view></router-view>
 </template>
 
 <script>
@@ -30,6 +33,10 @@ import Input from './components/Input.vue';
 </script>
 
 <style>
+  .router-link-active{
+    color: green;
+    font-weight: bold;
+  }
   .container{
     text-align: center;
     margin: 10px auto;

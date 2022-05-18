@@ -32,7 +32,7 @@
                     }
                     this.tempSkills = ''
                 }
-            },j
+            },
             removeSkill(skill) {
                 // console.log(skill)
                 this.skills = this.skills.filter((item) => {
