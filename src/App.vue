@@ -1,45 +1,30 @@
 <script setup>
-import Project from './components/Block.vue';
-import Results from './components/Results.vue';
-import Block from './components/Block.vue';
+import Input from './components/Input.vue';
+
 
 </script>
 
 <template>
   <div class="container">
-      <h1>Reaction timer</h1>
-      <div class="playButton"><button :disabled="isPlaying" @click="start">Play</button></div>
-      <Results  v-if="showResults" :score="score"></Results>
-      <Block  v-if="isPlaying" :delay="delay" @end="endGame"></Block>
+      <h1>Inputs</h1>
   </div>
+  <Input></Input>
 </template>
 
 <script>
+
   export default {
     name:'App',
     components: {
-      Block,
-      Results
+      Input
     },
     data() {
       return {
-        isPlaying:    false,
-        delay:        null,
-        score:        null,
-        showResults:  false,
+
       }
     },
     methods: {
-      start() {
-        this.delay        = 100 + Math.random() * 5000
-        this.isPlaying    = true
-        this.showResults  = false
-      },
-      endGame(reactionTime) {
-        this.score       = reactionTime
-        this.isPlaying   = false
-        this.showResults = true
-      }
+
     }
   }
 </script>
