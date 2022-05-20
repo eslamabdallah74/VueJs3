@@ -3,10 +3,12 @@
         <h1>List of Games</h1>
     </div>
     <div style="display:inline-block ;" v-for="game in games" :key="game.name">
-        <div>
-            {{ game.name }}
-        </div>
-        <img :src="game.imgpath" :alt="game.name">
+        <router-link :to="{ name: 'Game', params: {id: game.name} }">
+            <div>
+                {{ game.name }}
+            </div>
+            <img :src="game.imgpath" :alt="game.name">
+        </router-link>
     </div>
 </template>
 
