@@ -1,6 +1,5 @@
 <template>
-    <h1>This is GAME</h1>
-    <p>Game ID is {{ id }}</p>
+    <h1>This is {{ id }}</h1>
 </template>
 
 <script>
